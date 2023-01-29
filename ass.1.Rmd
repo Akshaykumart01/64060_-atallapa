@@ -1,0 +1,52 @@
+---
+title: "ASSIGNMENT 1"
+author: "AKSHAY KUMAR TALLAPALLY"
+date: "2023-01-29"
+output: pdf_document
+---
+
+```{r}
+#loading dataset
+yt_channels <- read.csv("C://Users//vamsh/Downloads//topSubscribed.csv")
+
+#link of the dataset https://www.kaggle.com/datasets/themrityunjaypathak/most-subscribed-1000-youtube-channels
+```
+
+```{r}
+#looking the dataset
+View(yt_channels)
+```
+
+```{r}
+#mean of the variable "rank"
+mean(yt_channels$Rank)
+```
+```{r}
+#mode of the variable "rank"
+mode(yt_channels$Rank)
+```
+```{r}
+#standard deviation of the variable 
+sd(yt_channels$Rank)
+```
+```{r}
+#str of the variable "Youtube.channel"
+str(yt_channels$Youtube.Channel)
+```
+```{r}
+#transformation of yt_channels dataset
+yt_channels_transformed <- (yt_channels$Rank -mean(yt_channels$Rank)/sd(yt_channels$Rank))
+yt_channels_transformed
+```
+```{r}
+#histogram of the variable "rank"
+hist(yt_channels$Rank)
+```
+```{r}
+#The graphical representation shown below is a scatterplot and
+#the choosen variables are "rank" and "started"
+M <- yt_channels$Started
+N <- yt_channels$Rank
+plot(M,N, main = "started and rank ", xlab = "started", ylab = "rank")
+```
+
